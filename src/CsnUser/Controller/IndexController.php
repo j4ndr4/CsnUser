@@ -108,8 +108,8 @@ class IndexController extends AbstractActionController
                         ));
                     }
 
-                    $adapter->setIdentityValue($user->getUsername());
-                    $adapter->setCredentialValue($this->params()->fromPost('password'));
+                    $adapter->setIdentity($user->getUsername());
+                    $adapter->setCredential($this->params()->fromPost('password'));
 
                     $authResult = $authService->authenticate();
                     if ($authResult->isValid()) {
